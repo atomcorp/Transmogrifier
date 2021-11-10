@@ -21,14 +21,21 @@
       <div class="csv-container">
         <h2>Paste .csv text</h2>
         <form id="input">
-          <textarea name="csv-text"></textarea>
+          <textarea
+            placeholder="Paste here. Can be copied directly from spreadsheet, or a .csv file. Must include headers."
+            name="csv-text"
+          ></textarea>
           <button>Transmogrify</button>
         </form>
       </div>
       <div class="txt-container">
         <h2>Copy .txt text</h2>
         <form>
-          <textarea id="output" disabled="true"></textarea>
+          <textarea
+            placeholder="Text will appear here"
+            id="output"
+            disabled="true"
+          ></textarea>
           <button id="copy" type="button">Copy</button>
         </form>
       </div>

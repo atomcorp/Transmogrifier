@@ -22,7 +22,6 @@ document.addEventListener("submit", (event) => {
   event.preventDefault();
   const formdata = new FormData(event.target);
   const csvText = formdata.get("csv-text");
-  console.log(csvText);
   if (csvText) {
     const parsedCsv = Papa.parse(csvText);
     const text = handleCsvData(parsedCsv.data);
@@ -42,6 +41,10 @@ async function setClipboard(string) {
 (() => {
   const copyButton = document.getElementById("copy");
   const outputTextArea = document.getElementById("output");
+  const inputForm = document.getElementById("input");
+  outputTextArea.value = "";
+  const inputTextArea = document.querySelector('[name="csv-text"');
+  inputTextArea.value = "";
   copyButton.addEventListener("click", (event) => {
     event.preventDefault();
     const output = outputTextArea.value;
